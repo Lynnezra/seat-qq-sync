@@ -5,7 +5,7 @@ namespace Lynnezra\Seat\QQSync;
 use Seat\Services\AbstractSeatPlugin;
 use Lynnezra\Seat\QQSync\Commands\QQSyncCommand;
 use Lynnezra\Seat\QQSync\Jobs\SyncQQMembers;
-use Lynnezra\Seat\QQSync\Services\NapcatService; // 添加这行
+use Lynnezra\Seat\QQSync\Services\NapcatService;
 
 class QQSyncServiceProvider extends AbstractSeatPlugin
 {
@@ -73,8 +73,9 @@ class QQSyncServiceProvider extends AbstractSeatPlugin
         return 'https://github.com/Lynnezra/seat-qq-sync';
     }
 
-    public function getVersion(): string
-    {
-        return config('qq-sync.version');
-    }
+    // 删除这个方法，因为父类中的 getVersion() 是 final 的
+    // public function getVersion(): string
+    // {
+    //     return config('qq-sync.version');
+    // }
 }
